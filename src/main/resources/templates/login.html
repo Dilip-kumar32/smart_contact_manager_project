@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body >
+	<section class="vh-100 bom">
+  
+  <div class="container1">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<div th:if="${param.error}" class="alert alert-danger">
+				Invalid UserName and Password
+			</div>
+			
+			<div th:if="${param.logout}" class="alert alert-success">
+				You have been logged out
+			</div>
+			
+			<div th:if="${param.change}" class="alert alert-success">
+				<p th:text="${param.change}"></p>
+			</div>
+			
+			
+				<h3>Sign In</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form th:action="@{/dologin}" action"#" method="post">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" name="username" class="form-control" placeholder="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" name="password" class="form-control" placeholder="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="/signup">Sign Up</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#" th:href="@{/forgot}">Forgot your password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+</body>
+</html>

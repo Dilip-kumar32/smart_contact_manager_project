@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user_base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+		<div class="container bg-white mr-5 py-5 " id="add">
+			
+			<div class="container text-center">
+			<img src=""style="width:200px;height:200px;" class="my_profile_picture" th:src="@{'/img/call_icon.png'}">
+			</div>
+			<h1 class="text-center mt-3 text-secondary font-italic font-weight-light">
+				Start Adding your contact on cloud...
+			</h1>
+			
+			<a th:href="@{/user/add-contact}" class="btn mt-4 btn-primary btn-block text-uppercase">Add New Contact</a>	
+			
+			<hr />
+			<h3 class="my-3">Donate Us</h3>
+			<input type="text" id="payment_field" class="form-control my-2" placeholder="Enter amount here" />
+			
+			<div class="container text-center  mt-4">
+				<button onclick="paymentStar()" class="btn btn-success btn-block">PAY</button>
+			</div>
+			
+			
+		</div>
+		<script>
+		
+	    document.getElementById("home-link").classList.add('active')
+
+		</script>
+		
+	</section>
+</body>
+</html>
